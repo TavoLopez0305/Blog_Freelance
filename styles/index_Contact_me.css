@@ -7,7 +7,7 @@
     }
     body{
         margin: 0;
-        padding: o;
+        padding: 0;
     }
 
     .standard:hover {
@@ -40,6 +40,18 @@
         padding: 1rem;
         text-align: center;
         color: white;
+    }
+    .error{
+        background-color: #0B1A26;
+        color: #FFFFFF;
+        font-weight: 900;
+        padding: 10px;
+    }
+    .alerta{
+        background-color: #FFFFFF;
+        color: #0B1A26;
+        font-weight: 900;
+        padding: 10px;
     }
     
 @media (min-width: 780px) {
@@ -470,6 +482,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        height: max-content;
     }
     .section_2 h1{
         color:#768DB6 ;
@@ -480,7 +493,6 @@
         flex-direction: column;
         justify-content: center;
 
-        height: 50vh;
     }
     .section_2 form input{
         height: 8vh;
