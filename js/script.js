@@ -19,23 +19,50 @@ formulario.addEventListener('submit', function(evento){
      const {nombre, email,mensaje} = datos;
 
      if(nombre === '' || email === '' || mensaje === ''){
-        mostrarError('Ingresa los campos obligatiorios')
+
+    //se le agrega un segundo valor en boleano "true" = error
+    //para usarlo como identificador posteriormente
+        mostrarAlerta('Ingresa los campos obligatiorios', true)
 
         return;
      }
    
      else{
-        mostrarMensaje('Se ha enviado el fomulario')
+        mostrarAlerta('Se ha enviado el fomulario')
      }
      
 });
-
 // leer los datos desde form
 function leerTexto (e) {
     datos[e.target.id] = e.target.value;
 }
 
+//refactory 
 
+const mostrarAlerta = (mensaje, error= null) =>{ // se le asigna un valor por default
+    const alerta = document.createElement('P'); //con la finalidad de que si no esta el valor boleano no haya problemas 
+    alerta.textContent = mensaje;
+    if( error){
+        alerta.classList.add('error');
+        
+        
+    }else{
+        alerta.classList.add('correcto')
+    }
+    formulario.appendChild(alerta);
+
+    //desvanecimeinto de la alerta 
+    
+    setTimeout(() =>{
+
+        error.remove();
+    }, 5000)
+ 
+
+}
+
+
+/*
 // Muestra error en pantalla
 
 function mostrarError(mensaje){
@@ -67,3 +94,4 @@ const mostrarMensaje =(mensaje) =>{
         error.remove();
     }, 5000)
 }
+    */
